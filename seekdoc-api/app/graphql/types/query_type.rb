@@ -27,7 +27,7 @@ module Types
     # User Favorite Queries
     field :all_user_favorite, [Types::UserFavoriteType], null: false
 
-    def all_user_faveorite
+    def all_user_favorite
       UserFavorite.all
     end
 

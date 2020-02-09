@@ -31,8 +31,8 @@ class Mutations::CreateUserFavorite < Mutations::BaseMutation
                 location_city:, 
                 location_state:, 
                 location_zip:, 
-                rating: nil, 
-                review: nil,
+                rating: , 
+                review: ,
                 )
     
     user_favorite = UserFavorite.new(
