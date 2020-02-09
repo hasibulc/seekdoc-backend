@@ -6,5 +6,8 @@ module Types
     def test_field
       "Hello World"
     end
+
+    field :create_doctor, mutation: Mutations::CreateDoctor
+    
   end
 end

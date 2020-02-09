@@ -21,3 +21,991 @@ Migrating to CreateUsers (20200203190107)
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 DEPRECATION WARNING: `Module#parent_name` has been renamed to `module_parent_name`. `parent_name` is deprecated and will be removed in Rails 6.1. (called from <main> at /Users/hasibul/mod_5/seekdoc-backend/seekdoc-api/bin/rails:9)
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:32:05 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 5650)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:32:51 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    street: \"11 Broadway\",\n    city: \"New York\",\n    state: \"NY\",\n    zip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      street\n      city\n      state\n      zip\n    }\n    errors\n  }\n}\n", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    street: \"11 Broadway\",\n    city: \"New York\",\n    state: \"NY\",\n    zip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      street\n      city\n      state\n      zip\n    }\n    errors\n  }\n}\n"}}
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1258)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:34:19 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}\n", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}\n"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 933)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:35:01 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1728)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:35:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }"}}
+Completed 200 OK in 14ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 2946)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:36:08 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:37:28 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3526)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:37:42 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 3780)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:38:22 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 965)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:40:04 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3816)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:40:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3517)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:40:47 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 963)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:40:57 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3816)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:42:06 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 3611)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:42:29 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[36mDoctor Create (0.7ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "bio", "location_lat", "location_long", "location_name", "location_street", "location_city", "location_state", "location_zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dr."], ["last_name", "Strange"], ["bio", "Sorcerer Supreme"], ["location_lat", 40.70528], ["location_long", -74.014259], ["location_name", "Flatiron School"], ["location_street", "11 Broadway"], ["location_city", "New York"], ["location_state", "NY"], ["location_zip", 10004], ["created_at", "2020-02-03 19:42:29.746008"], ["updated_at", "2020-02-03 19:42:29.746008"]]
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+Completed 200 OK in 58ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 18390)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:43:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\tgender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\tgender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 15270)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:43:26 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 1910)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:43:27 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 1890)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:43:27 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1907)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200203190107)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200203190107"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDoctors (20200203185750)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "doctors"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200203185750"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDoctors (20200203185750)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "bio" varchar, "location_lat" float, "location_long" float, "float" varchar, "location_name" varchar, "location_street" varchar, "location_city" varchar, "location_state" varchar, "location_zip" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200203185750"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200203190107)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password" varchar, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200203190107"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200203190107)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200203190107"]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDoctors (20200203185750)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "doctors"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20200203185750"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateDoctors (20200203185750)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "doctors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "gender" varchar, "bio" varchar, "location_lat" float, "location_long" float, "location_name" varchar, "location_street" varchar, "location_city" varchar, "location_state" varchar, "location_zip" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200203185750"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20200203190107)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "password" varchar, "first_name" varchar, "last_name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200203190107"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:46:02 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\t      gender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 36ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 6873)
+
+
+Started POST "/graphql" for 127.0.0.1 at 2020-02-03 14:47:11 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}\n", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Strange\",\n    gender: \"Male\",\n    bio: \"Sorcerer Supreme\",\n    locationLat: 40.705280,\n    locationLong: -74.014259,\n    locationName: \"Flatiron School\",\n    locationStreet: \"11 Broadway\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10004,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}\n"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[36mDoctor Create (0.5ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "gender", "bio", "location_lat", "location_long", "location_name", "location_street", "location_city", "location_state", "location_zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dr."], ["last_name", "Strange"], ["gender", "Male"], ["bio", "Sorcerer Supreme"], ["location_lat", 40.70528], ["location_long", -74.014259], ["location_name", "Flatiron School"], ["location_street", "11 Broadway"], ["location_city", "New York"], ["location_state", "NY"], ["location_zip", 10004], ["created_at", "2020-02-03 19:47:11.687711"], ["updated_at", "2020-02-03 19:47:11.687711"]]
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 7.3ms | Allocations: 12754)
+
+
+Started GET "/" for ::1 at 2020-02-03 14:49:33 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.1ms | Allocations: 481)
+Completed 200 OK in 26ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 2638)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-02-03 14:49:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/graphql" for ::1 at 2020-02-03 14:58:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 1564)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 14:58:11 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1221)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 14:58:17 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1234)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 15:43:38 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1231)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 15:43:39 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    bio\n    locationLat\n    locationLong\n    locationName\n    street\n    city\n    zip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 1230)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:03 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1007)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:13 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1003)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:16 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 1003)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:16 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1003)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:18 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    ocationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 1014)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:35 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            ocationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }", "graphql"=>{"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            ocationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }"}}
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 959)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:46 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 2168)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:04:47 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }", "graphql"=>{"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2014)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:05:33 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 2074)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:24:26 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2110)
+
+
+Started POST "/graphql" for ::1 at 2020-02-03 16:26:21 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2089)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 10:42:34 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 2110)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 11:32:05 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 2123)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 14:13:14 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 2110)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:29:09 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms | Allocations: 2121)
+
+
+Started GET "/" for ::1 at 2020-02-04 15:30:59 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 47.7ms | Allocations: 316)
+Completed 200 OK in 60ms (Views: 54.5ms | ActiveRecord: 0.0ms | Allocations: 1605)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:31:04 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }", "graphql"=>{"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }"}}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 15600)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:35:46 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 2416)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:37:13 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"Miranda", "lastName"=>"Bailey", "bio"=>"Best one", "locationLat"=>123, "locationLong"=>-3123, "locationName"=>"Mt Sinai", "street"=>"New York", "city"=>"Ny", "zip"=>10015}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float!, $locationLong: Float!, $locationName: String!, $street: String!, $city: String!, $zip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, street: $street, city: $city, zip: $zip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      street\n      city\n      zip\n      __typename\n    }\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"Miranda", "lastName"=>"Bailey", "bio"=>"Best one", "locationLat"=>123, "locationLong"=>-3123, "locationName"=>"Mt Sinai", "street"=>"New York", "city"=>"Ny", "zip"=>10015}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float!, $locationLong: Float!, $locationName: String!, $street: String!, $city: String!, $zip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, street: $street, city: $city, zip: $zip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      street\n      city\n      zip\n      __typename\n    }\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 6ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 2911)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:37:22 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2083)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:41:16 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 2074)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:41:46 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"Madison", "lastName"=>"Bailey", "bio"=>"The best", "locationLat"=>123, "locationLong"=>-123, "locationName"=>"Mt Sinai", "locationStreet"=>"123 Street", "locationCity"=>"New York", "locationState"=>"New York", "locationZip"=>11111}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float!, $locationLong: Float!, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $street, locationCity: $city, locationState: $state, locationZip: $zip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"Madison", "lastName"=>"Bailey", "bio"=>"The best", "locationLat"=>123, "locationLong"=>-123, "locationName"=>"Mt Sinai", "locationStreet"=>"123 Street", "locationCity"=>"New York", "locationState"=>"New York", "locationZip"=>11111}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float!, $locationLong: Float!, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $street, locationCity: $city, locationState: $state, locationZip: $zip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 2753)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:42:56 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 10ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2074)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:43:03 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"123", "lastName"=>"123", "bio"=>"123", "locationLat"=>123, "locationLong"=>123, "locationName"=>"123", "locationStreet"=>"123", "locationCity"=>"123", "locationState"=>"123", "locationZip"=>123}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float, $locationLong: Float, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $street, locationCity: $city, locationState: $state, locationZip: $zip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"123", "lastName"=>"123", "bio"=>"123", "locationLat"=>123, "locationLong"=>123, "locationName"=>"123", "locationStreet"=>"123", "locationCity"=>"123", "locationState"=>"123", "locationZip"=>123}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float, $locationLong: Float, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $street, locationCity: $city, locationState: $state, locationZip: $zip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n"}}
+Completed 200 OK in 14ms (Views: 3.2ms | ActiveRecord: 0.0ms | Allocations: 2755)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:44:17 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 2074)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:44:23 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"123", "lastName"=>"123", "bio"=>"123", "locationLat"=>123, "locationLong"=>123, "locationName"=>"123", "locationStreet"=>"123", "locationCity"=>"123", "locationState"=>"123", "locationZip"=>123}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float, $locationLong: Float, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $locationStreet, locationCity: $locationCity, locationState: $locationState, locationZip: $locationZip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"123", "lastName"=>"123", "bio"=>"123", "locationLat"=>123, "locationLong"=>123, "locationName"=>"123", "locationStreet"=>"123", "locationCity"=>"123", "locationState"=>"123", "locationZip"=>123}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $bio: String!, $locationLat: Float, $locationLong: Float, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $locationStreet, locationCity: $locationCity, locationState: $locationState, locationZip: $locationZip}) {\n    doctor {\n      firstName\n      lastName\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n"}}
+missing keyword: gender
+/Users/hasibul/mod_5/seekdoc-backend/seekdoc-api/app/graphql/mutations/create_doctor.rb:18:in `resolve'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/resolver.rb:95:in `public_send'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/resolver.rb:95:in `block (3 levels) in resolve_with_support'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema.rb:1565:in `after_lazy'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/resolver.rb:83:in `block (2 levels) in resolve_with_support'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema.rb:1565:in `after_lazy'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/resolver.rb:76:in `block in resolve_with_support'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema.rb:1565:in `after_lazy'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/resolver.rb:65:in `resolve_with_support'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/relay_classic_mutation.rb:64:in `resolve_with_support'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/field.rb:564:in `public_send'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/field.rb:564:in `block in resolve'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/field.rb:693:in `with_extensions'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema/field.rb:549:in `resolve'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:217:in `block (4 levels) in evaluate_selections'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:66:in `block in trace'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:80:in `call_tracers'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:66:in `trace'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:216:in `block (3 levels) in evaluate_selections'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/query.rb:311:in `block in with_error_handling'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/errors.rb:30:in `with_error_handling'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/query.rb:310:in `with_error_handling'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:215:in `block (2 levels) in evaluate_selections'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:358:in `block in resolve_with_directives'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:364:in `run_directive'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:358:in `resolve_with_directives'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:212:in `block in evaluate_selections'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:124:in `each'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:124:in `evaluate_selections'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter/runtime.rb:60:in `run_eager'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter.rb:67:in `block in evaluate'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:66:in `block in trace'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:80:in `call_tracers'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:66:in `trace'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter.rb:66:in `evaluate'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/interpreter.rb:39:in `begin_query'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:113:in `begin_query'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:84:in `block in run_as_multiplex'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:83:in `map'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:83:in `run_as_multiplex'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:62:in `block (2 levels) in run_queries'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:196:in `block in instrument_and_analyze'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:29:in `block (2 levels) in apply_instrumenters'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:46:in `block (2 levels) in each_query_call_hooks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:41:in `each_query_call_hooks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:45:in `block in each_query_call_hooks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:44:in `each_query_call_hooks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:27:in `block in apply_instrumenters'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:72:in `call_hooks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/instrumentation.rb:26:in `apply_instrumenters'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:175:in `instrument_and_analyze'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:61:in `block in run_queries'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:66:in `block in trace'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:80:in `call_tracers'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/tracing.rb:66:in `trace'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:59:in `run_queries'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/execution/multiplex.rb:49:in `run_all'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema.rb:1541:in `multiplex'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/graphql-1.10.2/lib/graphql/schema.rb:1512:in `execute'
+/Users/hasibul/mod_5/seekdoc-backend/seekdoc-api/app/controllers/graphql_controller.rb:15:in `execute'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/abstract_controller/base.rb:196:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal/rendering.rb:30:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/abstract_controller/callbacks.rb:41:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal/rescue.rb:22:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/notifications.rb:180:in `block in instrument'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/notifications.rb:180:in `instrument'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activerecord-6.0.2.1/lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/abstract_controller/base.rb:136:in `process'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal.rb:191:in `dispatch'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_controller/metal.rb:252:in `dispatch'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/routing/route_set.rb:33:in `serve'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/journey/router.rb:49:in `block in serve'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/journey/router.rb:32:in `each'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/journey/router.rb:32:in `serve'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/routing/route_set.rb:837:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/rack-2.1.2/lib/rack/etag.rb:27:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/rack-2.1.2/lib/rack/conditional_get.rb:40:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/rack-2.1.2/lib/rack/head.rb:14:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activerecord-6.0.2.1/lib/active_record/migration.rb:567:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/callbacks.rb:101:in `run_callbacks'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/rack/logger.rb:38:in `call_app'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/rack/logger.rb:26:in `block in call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/tagged_logging.rb:80:in `block in tagged'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/tagged_logging.rb:28:in `tagged'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/tagged_logging.rb:80:in `tagged'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/rack/logger.rb:26:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/request_id.rb:27:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/rack-2.1.2/lib/rack/runtime.rb:24:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/activesupport-6.0.2.1/lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/executor.rb:14:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/static.rb:126:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/rack-2.1.2/lib/rack/sendfile.rb:113:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/actionpack-6.0.2.1/lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/rack-cors-1.1.1/lib/rack/cors.rb:100:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/engine.rb:526:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/puma-4.3.1/lib/puma/configuration.rb:228:in `call'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/puma-4.3.1/lib/puma/server.rb:681:in `handle_request'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/puma-4.3.1/lib/puma/server.rb:472:in `process_client'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/puma-4.3.1/lib/puma/server.rb:328:in `block in run'
+/Users/hasibul/.rvm/gems/ruby-2.6.1/gems/puma-4.3.1/lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Completed 500 Internal Server Error in 47ms (Views: 3.0ms | ActiveRecord: 0.0ms | Allocations: 3079)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:46:32 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 10ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 2089)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:46:39 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"123", "lastName"=>"123", "gender"=>"123", "bio"=>"123", "locationLat"=>123, "locationLong"=>123, "locationName"=>"123", "locationStreet"=>"123", "locationCity"=>"123", "locationState"=>"123", "locationZip"=>123}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $gender: String!, $bio: String!, $locationLat: Float, $locationLong: Float, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, gender: $gender, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $locationStreet, locationCity: $locationCity, locationState: $locationState, locationZip: $locationZip}) {\n    doctor {\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>"CreateDoctor", "variables"=>{"firstName"=>"123", "lastName"=>"123", "gender"=>"123", "bio"=>"123", "locationLat"=>123, "locationLong"=>123, "locationName"=>"123", "locationStreet"=>"123", "locationCity"=>"123", "locationState"=>"123", "locationZip"=>123}, "query"=>"mutation CreateDoctor($firstName: String!, $lastName: String!, $gender: String!, $bio: String!, $locationLat: Float, $locationLong: Float, $locationName: String!, $locationStreet: String!, $locationCity: String!, $locationState: String!, $locationZip: Int!) {\n  createDoctor(input: {firstName: $firstName, lastName: $lastName, gender: $gender, bio: $bio, locationLat: $locationLat, locationLong: $locationLong, locationName: $locationName, locationStreet: $locationStreet, locationCity: $locationCity, locationState: $locationState, locationZip: $locationZip}) {\n    doctor {\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n      __typename\n    }\n    __typename\n  }\n}\n"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[36mDoctor Create (1.1ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "gender", "bio", "location_lat", "location_long", "location_name", "location_street", "location_city", "location_state", "location_zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "123"], ["last_name", "123"], ["gender", "123"], ["bio", "123"], ["location_lat", 123.0], ["location_long", 123.0], ["location_name", "123"], ["location_street", "123"], ["location_city", "123"], ["location_state", "123"], ["location_zip", 123], ["created_at", "2020-02-04 20:46:39.687041"], ["updated_at", "2020-02-04 20:46:39.687041"]]
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 7.5ms | Allocations: 4747)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 15:46:43 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2346)
+
+
+Started POST "/graphql" for ::1 at 2020-02-04 17:47:30 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 2381)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 11:19:47 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 18ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 2383)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:08:39 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.9ms | Allocations: 2381)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:08:43 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 2345)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:16:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 11ms (Views: 0.7ms | ActiveRecord: 0.8ms | Allocations: 2381)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:20:51 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }", "graphql"=>{"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 2250)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:20:51 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }", "graphql"=>{"query"=>"query {\n        allDoctors {\n            id\n            firstName\n            lastName\n            gender\n            bio\n            locationLat\n            locationLong\n            locationName\n            locationStreet\n            locationCity\n            locationState\n            locationZip\n        }\n    }"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2250)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:22:19 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Not Strange\",\n    gender: \"Female\",\n    bio: \"Sorcereress Supreme\",\n    locationLat: 40000.705280,\n    locationLong: -79994.014259,\n    locationName: \"Soho\",\n    locationStreet: \"111 Broadways\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10024,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}\n", "graphql"=>{"query"=>"mutation {\n  createDoctor(input: {\n    firstName: \"Dr.\",\n    lastName: \"Not Strange\",\n    gender: \"Female\",\n    bio: \"Sorcereress Supreme\",\n    locationLat: 40000.705280,\n    locationLong: -79994.014259,\n    locationName: \"Soho\",\n    locationStreet: \"111 Broadways\",\n    locationCity: \"New York\",\n    locationState: \"NY\",\n    locationZip: 10024,\n  }){\n    doctor {\n      id\n      firstName\n      lastName\n      gender\n      bio\n      locationLat\n      locationLong\n      locationName\n      locationStreet\n      locationCity\n      locationState\n      locationZip\n    }\n    errors\n  }\n}\n"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[36mDoctor Create (2.2ms)[0m  [1m[32mINSERT INTO "doctors" ("first_name", "last_name", "gender", "bio", "location_lat", "location_long", "location_name", "location_street", "location_city", "location_state", "location_zip", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Dr."], ["last_name", "Not Strange"], ["gender", "Female"], ["bio", "Sorcereress Supreme"], ["location_lat", 40000.70528], ["location_long", -79994.014259], ["location_name", "Soho"], ["location_street", "111 Broadways"], ["location_city", "New York"], ["location_state", "NY"], ["location_zip", 10024], ["created_at", "2020-02-05 18:22:19.592925"], ["updated_at", "2020-02-05 18:22:19.592925"]]
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/graphql/mutations/create_doctor.rb:23:in `resolve'
+Completed 200 OK in 40ms (Views: 0.3ms | ActiveRecord: 3.2ms | Allocations: 4026)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:22:32 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\tgender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }", "graphql"=>{"query"=>"query {\n    allDoctors {\n        id\n        firstName\n        lastName\n\tgender\n        bio\n        locationLat\n        locationLong\n        locationName\n        locationStreet\n        locationCity\n        locationState\n        locationZip\n    }\n    }"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 2495)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:22:43 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 2615)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 13:35:28 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 10ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 2651)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 14:25:22 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 2653)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 14:30:19 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 2615)
+
+
+Started GET "/" for ::1 at 2020-02-05 16:32:49 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 41.1ms | Allocations: 198)
+Completed 200 OK in 54ms (Views: 46.0ms | ActiveRecord: 0.0ms | Allocations: 737)
+
+
+Started GET "/" for ::1 at 2020-02-05 16:33:45 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | Allocations: 8)
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 236)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 16:50:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (6.0ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 6.0ms | Allocations: 2652)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 17:00:04 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 2651)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 17:09:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 2651)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 17:13:10 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 10ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 2615)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 17:16:18 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 2615)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 17:30:13 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 0.8ms | Allocations: 2651)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 22:35:17 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.7ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 2653)
+
+
+Started POST "/graphql" for ::1 at 2020-02-05 22:35:19 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 12ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 2615)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 10:24:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.8ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 46ms (Views: 4.4ms | ActiveRecord: 0.8ms | Allocations: 2653)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 10:24:18 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 2615)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 10:24:26 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 9ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 2615)
+
+
+Started GET "/" for ::1 at 2020-02-07 10:59:40 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.4ms | Allocations: 316)
+Completed 200 OK in 17ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 1605)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-02-07 10:59:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.1.2) lib/rack/runtime.rb:24:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.1.2) lib/rack/sendfile.rb:113:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.1) lib/puma/configuration.rb:228:in `call'
+puma (4.3.1) lib/puma/server.rb:681:in `handle_request'
+puma (4.3.1) lib/puma/server.rb:472:in `process_client'
+puma (4.3.1) lib/puma/server.rb:328:in `block in run'
+puma (4.3.1) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/graphql" for ::1 at 2020-02-07 10:59:43 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 84ms (Views: 1.0ms | ActiveRecord: 1.4ms | Allocations: 16596)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 11:57:35 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.3ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 2673)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 11:59:29 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.1ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 2639)
+
+
+Started GET "/" for ::1 at 2020-02-07 12:09:25 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/hasibul/.rvm/gems/ruby-2.6.1/gems/railties-6.0.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.3ms | Allocations: 196)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 736)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 13:16:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.4ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 11ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 2651)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 14:56:19 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.9ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 8ms (Views: 0.5ms | ActiveRecord: 0.9ms | Allocations: 2662)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 14:56:29 -0500
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.2ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 9ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 2643)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 22:00:08 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.5ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 23ms (Views: 1.9ms | ActiveRecord: 0.5ms | Allocations: 2651)
+
+
+Started POST "/graphql" for ::1 at 2020-02-07 22:20:14 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by GraphqlController#execute as */*
+  Parameters: {"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n", "graphql"=>{"operationName"=>nil, "variables"=>{}, "query"=>"{\n  allDoctors {\n    id\n    firstName\n    lastName\n    gender\n    bio\n    locationLat\n    locationLong\n    locationName\n    locationStreet\n    locationCity\n    locationState\n    locationZip\n    __typename\n  }\n}\n"}}
+  [1m[36mDoctor Load (0.6ms)[0m  [1m[34mSELECT "doctors".* FROM "doctors"[0m
+  ↳ app/controllers/graphql_controller.rb:15:in `execute'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 2651)
+
+

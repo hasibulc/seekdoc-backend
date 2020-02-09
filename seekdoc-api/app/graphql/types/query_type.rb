@@ -20,7 +20,7 @@ module Types
     # User Queries
     field :all_users, [Types::UserType], null: false
 
-    def all_doctors
+    def all_users
       User.all
     end
 

@@ -7,7 +7,6 @@ class CreateDoctors < ActiveRecord::Migration[6.0]
       t.string :bio
       t.float :location_lat
       t.float :location_long
-      t.string :float
       t.string :location_name
       t.string :location_street
       t.string :location_city
