@@ -15,11 +15,32 @@ class Mutations::CreateDoctor < Mutations::BaseMutation
     field :doctor, Types::DoctorType, null: false
     field :errors, [String], null: false
   
-    def resolve(first_name: , last_name:, gender:, bio:, location_lat:, location_long:, 
-                location_name:, location_street:, location_city:, location_state: , location_zip:)
-      doctor = Doctor.new(first_name: first_name, last_name: last_name, gender: gender, bio: bio, 
-                          location_lat: location_lat, location_long: location_long, 
-                          location_name: location_name, location_street: location_street, location_city: location_city, location_state: location_state, location_zip: location_zip)
+    def resolve(
+                first_name:, 
+                last_name:, 
+                gender:, 
+                bio:, 
+                location_lat:, 
+                location_long:, 
+                location_name:, 
+                location_street:, 
+                location_city:, 
+                location_state:, 
+                location_zip:
+                )
+      doctor = Doctor.new(
+                          first_name: first_name, 
+                          last_name: last_name, 
+                          gender: gender, 
+                          bio: bio, 
+                          location_lat: location_lat, 
+                          ocation_long: location_long, 
+                          location_name: location_name, 
+                          location_street: location_street, 
+                          location_city: location_city, 
+                          location_state: location_state, 
+                          location_zip: location_zip
+                        )
       if doctor.save
         # Successful creation, return the created object with no errors
         {

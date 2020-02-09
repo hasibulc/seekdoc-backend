@@ -24,5 +24,12 @@ module Types
       User.all
     end
 
+    # User Favorites Queries
+    field :all_user_favorites, [Types::UserFavoritesType], null: false
+
+    def all_user_favorites
+      UserFavorite.all
+    end
+
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_190107) do
+ActiveRecord::Schema.define(version: 2020_02_09_224248) do
 
   create_table "doctors", force: :cascade do |t|
     t.string "first_name"
@@ -24,6 +24,25 @@ ActiveRecord::Schema.define(version: 2020_02_03_190107) do
     t.string "location_city"
     t.string "location_state"
     t.integer "location_zip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_favorites", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "doctor_fn"
+    t.string "doctor_ln"
+    t.string "gender"
+    t.string "bio"
+    t.float "location_lat"
+    t.float "location_long"
+    t.string "location_name"
+    t.string "location_street"
+    t.string "location_city"
+    t.string "location_state"
+    t.integer "location_zip"
+    t.integer "rating"
+    t.string "review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
