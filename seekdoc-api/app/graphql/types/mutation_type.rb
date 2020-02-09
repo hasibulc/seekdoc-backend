@@ -8,6 +8,8 @@ module Types
     end
 
     field :create_doctor, mutation: Mutations::CreateDoctor
+
+    field :create_user_favorite, mutation: Mutations::CreateUserFavorite
     
   end
 end

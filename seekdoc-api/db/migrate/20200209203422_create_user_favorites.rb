@@ -13,7 +13,7 @@ class CreateUserFavorites < ActiveRecord::Migration[6.0]
       t.string :location_city
       t.string :location_state
       t.integer :location_zip
-      t.string :rating
+      t.integer :rating
       t.string :review
 
       t.timestamps

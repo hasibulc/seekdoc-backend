@@ -24,5 +24,20 @@ module Types
       User.all
     end
 
+    # User Favorite Queries
+    field :all_user_favorite, [Types::UserFavoriteType], null: false
+
+    def all_user_faveorite
+      UserFavorite.all
+    end
+
+    field :user_favorite, [Types::UserFavoriteType], null: false do
+      argument :user_id, Integer, required: true
+    end
+
+    def user_favorite(id:)
+      UserFavorite.find(id)
+    end
+
   end
 end

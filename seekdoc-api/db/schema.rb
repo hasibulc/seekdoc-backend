@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_203422) do
     t.string "location_city"
     t.string "location_state"
     t.integer "location_zip"
-    t.string "rating"
+    t.integer "rating"
     t.string "review"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
