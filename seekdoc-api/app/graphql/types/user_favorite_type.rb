@@ -14,6 +14,6 @@ module Types
     field :location_state, String, null: false
     field :location_zip, Integer, null: false
     field :rating, Integer, null: false
-    field :location_zip, String, null: false
+    field :review, String, null: false
   end
 end

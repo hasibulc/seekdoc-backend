@@ -31,8 +31,8 @@ class Mutations::CreateUserFavorite < Mutations::BaseMutation
                 location_city:, 
                 location_state:, 
                 location_zip:, 
-                rating: , 
-                review: ,
+                rating:, 
+                review:
                 )
     
     user_favorite = UserFavorite.new(
@@ -49,7 +49,24 @@ class Mutations::CreateUserFavorite < Mutations::BaseMutation
                                     location_state: location_state, 
                                     location_zip: location_zip, 
                                     rating: rating, 
-                                    review: review,
+                                    review: review
                                     )
 
+
+    if user_favorite.save
+        # Successful creation, return the created object with no errors
+        {
+            user_favorite: user_favorite,
+            errors: [],
+        }
+        else
+        # Failed save, return the errors to the client
+        {
+            user_favorite: nil,
+            errors: user_favorite.errors.full_messages
+        }
+        end
+    end
+
 end
+
