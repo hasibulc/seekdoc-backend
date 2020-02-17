@@ -1,3 +1,3 @@
 class User < ApplicationRecord
-    has_many: UserFavorite
+    # has_many :user_favorite
 end

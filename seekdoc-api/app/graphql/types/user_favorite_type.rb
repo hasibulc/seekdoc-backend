@@ -13,7 +13,7 @@ module Types
     field :location_city, String, null: false
     field :location_state, String, null: false
     field :location_zip, Integer, null: false
-    field :rating, Integer, null: false
-    field :review, String, null: false
+    field :rating, Integer, null: true
+    field :review, String, null: true
   end
 end

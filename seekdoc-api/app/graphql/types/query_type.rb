@@ -33,10 +33,11 @@ module Types
 
     field :user_favorite, [Types::UserFavoriteType], null: false do
       argument :user_id, Integer, required: true
+      # resolve -> (obj, args, ctx) {UserFavorite.find(args[:user_id])}
     end
 
-    def user_favorite(id:)
-      UserFavorite.find(id)
+    def user_favorite(user_id)
+      UserFavorite.where(user_id: user_id[:user_id])
     end
 
   end

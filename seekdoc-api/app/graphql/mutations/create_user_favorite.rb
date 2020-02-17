@@ -48,8 +48,8 @@ class Mutations::CreateUserFavorite < Mutations::BaseMutation
                                     location_city: location_city, 
                                     location_state: location_state, 
                                     location_zip: location_zip, 
-                                    rating: rating, 
-                                    review: review
+                                    rating: nil || rating, 
+                                    review: nil || review
                                     )
 
 
